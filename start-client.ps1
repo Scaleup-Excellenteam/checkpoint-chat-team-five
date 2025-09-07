@@ -4,14 +4,8 @@
 Write-Host "Starting TSPO Chat Client..." -ForegroundColor Green
 Write-Host ""
 
-# Get server IP from user
-$serverIP = Read-Host "Enter the host server IP address (e.g., 192.168.1.100)"
-if (-not $serverIP) {
-    Write-Host "Error: Server IP address is required" -ForegroundColor Red
-    Read-Host "Press Enter to exit"
-    exit 1
-}
-
+# Use hardcoded server IP
+$serverIP = "192.168.127.82"
 Write-Host "Connecting to server: $serverIP" -ForegroundColor Cyan
 Write-Host ""
 

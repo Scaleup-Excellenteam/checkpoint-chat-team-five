@@ -16,7 +16,7 @@ type MessageListResponse = {
 };
 
 const BASE_URL =
-  (import.meta as any)?.env?.VITE_API_URL || "http://localhost:8000";
+  (import.meta as any)?.env?.VITE_API_URL || "http://192.168.127.82:8000";
 
 export async function fetchMessages(
   room: string,

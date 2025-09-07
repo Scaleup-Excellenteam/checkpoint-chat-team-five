@@ -82,12 +82,7 @@ try {
 
 Write-Host ""
 Write-Host "Setting up frontend environment..." -ForegroundColor Cyan
-if ($ipAddress) {
-    $apiUrl = "http://$ipAddress`:8000"
-} else {
-    $apiUrl = "http://localhost:8000"
-}
-
+$apiUrl = "http://192.168.127.82:8000"
 "VITE_API_URL=$apiUrl" | Out-File -FilePath ".env" -Encoding UTF8
 Write-Host "Frontend will connect to: $apiUrl" -ForegroundColor Cyan
 
