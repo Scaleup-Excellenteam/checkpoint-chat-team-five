@@ -14,12 +14,14 @@ function GeneralRoom() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [sending, setSending] = useState(false);
+  const [wsOpen, setWsOpen] = useState(false);
   const user = useMemo(() => {
     // simple ephemeral user name per tab
     return `user-${Math.random().toString(36).slice(2, 8)}`;
   }, []);
   const abortRef = useRef<AbortController | null>(null);
   const wsRef = useRef<WebSocket | null>(null);
+  const seenIdsRef = useRef<Set<string>>(new Set());
 
   // load initial history
   useEffect(() => {
@@ -27,7 +29,10 @@ function GeneralRoom() {
     (async () => {
       try {
         const history = await fetchMessages(room, 50);
-        if (mounted) setMessages(history);
+        if (mounted) {
+          seenIdsRef.current = new Set(history.map((m) => m.id));
+          setMessages(history);
+        }
       } catch (e) {
         // no-op for now
       }
@@ -42,25 +47,34 @@ function GeneralRoom() {
     const ws = openWebSocket(room, user);
     wsRef.current = ws;
     ws.onopen = () => {
-      // connected
+      setWsOpen(true);
     };
     ws.onmessage = (event) => {
       try {
         const data = JSON.parse(event.data);
         if (data.type === "chat") {
-          setMessages((prev) => [
-            ...prev,
-            {
-              id: data.id,
-              room: data.room,
-              content: data.content,
-              sender: data.sender,
-              timestamp: data.timestamp,
-              processed: true,
-            },
-          ]);
+          if (!seenIdsRef.current.has(data.id)) {
+            seenIdsRef.current.add(data.id);
+            setMessages((prev) => [
+              ...prev,
+              {
+                id: data.id,
+                room: data.room,
+                content: data.content,
+                sender: data.sender,
+                timestamp: data.timestamp,
+                processed: true,
+              },
+            ]);
+          }
         }
       } catch {}
+    };
+    ws.onerror = () => {
+      setWsOpen(false);
+    };
+    ws.onclose = () => {
+      setWsOpen(false);
     };
     return () => {
       try {
@@ -69,6 +83,39 @@ function GeneralRoom() {
       wsRef.current = null;
     };
   }, [room, user]);
+
+  // Fallback: long-poll when WS is not open
+  useEffect(() => {
+    if (wsOpen) return; // WebSocket handles realtime when connected
+    let cancelled = false;
+    const loop = async () => {
+      while (!cancelled) {
+        try {
+          const { pollMessages } = await import("../lib/api");
+          const incoming = await pollMessages({ room, user, timeoutSec: 25 });
+          if (incoming.length) {
+            const toAdd: Message[] = [];
+            for (const m of incoming) {
+              if (!seenIdsRef.current.has(m.id)) {
+                seenIdsRef.current.add(m.id);
+                toAdd.push(m);
+              }
+            }
+            if (toAdd.length) {
+              setMessages((prev) => [...prev, ...toAdd]);
+            }
+          }
+        } catch {
+          // small backoff
+          await new Promise((r) => setTimeout(r, 500));
+        }
+      }
+    };
+    loop();
+    return () => {
+      cancelled = true;
+    };
+  }, [room, user, wsOpen]);
 
   const handleSend = async () => {
     if (message.trim() === "" || sending) return;
