@@ -4,8 +4,26 @@
 Write-Host "Starting TSPO Chat Client..." -ForegroundColor Green
 Write-Host ""
 
-# Use hardcoded server IP
-$serverIP = "192.168.127.82"
+# Read SYSTEM_IP from root .env if present, otherwise prompt
+$serverIP = $null
+try {
+    if (Test-Path ".env") {
+        $envContent = Get-Content ".env" -Raw
+        if ($envContent -match "SYSTEM_IP=(.+)") {
+            $serverIP = $matches[1].Trim()
+        }
+    }
+    if (-not $serverIP -and (Test-Path "..\.env")) {
+        $envContent = Get-Content "..\.env" -Raw
+        if ($envContent -match "SYSTEM_IP=(.+)") {
+            $serverIP = $matches[1].Trim()
+        }
+    }
+} catch {}
+
+if (-not $serverIP) {
+    $serverIP = Read-Host "Enter the host server IP address (e.g., 192.168.1.100)"
+}
 Write-Host "Connecting to server: $serverIP" -ForegroundColor Cyan
 Write-Host ""
 

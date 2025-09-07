@@ -82,8 +82,27 @@ try {
 
 Write-Host ""
 Write-Host "Setting up frontend environment..." -ForegroundColor Cyan
-$apiUrl = "http://192.168.127.82:8000"
-"VITE_API_URL=$apiUrl" | Out-File -FilePath ".env" -Encoding UTF8
+# Try to read SYSTEM_IP from root .env
+$rootEnvPath = Join-Path (Split-Path (Get-Location) -Leaf) ".env"
+try {
+    if (Test-Path "..\..\.env") {
+        $envContent = Get-Content "..\..\.env" -Raw
+        if ($envContent -match "SYSTEM_IP=(.+)") {
+            $serverIP = $matches[1].Trim()
+        }
+    }
+} catch {}
+
+if (-not $serverIP) {
+    # Fallback to detected IP
+    $serverIP = $ipAddress
+}
+
+if (-not $serverIP) { $serverIP = "localhost" }
+
+$apiUrl = "http://$serverIP`:8000"
+"VITE_SYSTEM_IP=$serverIP" | Out-File -FilePath ".env" -Encoding UTF8
+"VITE_API_URL=$apiUrl" | Add-Content ".env"
 Write-Host "Frontend will connect to: $apiUrl" -ForegroundColor Cyan
 
 Write-Host ""

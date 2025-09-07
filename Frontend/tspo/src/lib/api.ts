@@ -15,8 +15,12 @@ type MessageListResponse = {
   has_more: boolean;
 };
 
+const V = (import.meta as any)?.env || {};
 const BASE_URL =
-  (import.meta as any)?.env?.VITE_API_URL || "http://192.168.127.82:8000";
+  V.VITE_API_URL ||
+  (V.VITE_SYSTEM_IP
+    ? `http://${V.VITE_SYSTEM_IP}:8000`
+    : "http://localhost:8000");
 
 export async function fetchMessages(
   room: string,
