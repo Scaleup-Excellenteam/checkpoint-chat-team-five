@@ -34,15 +34,29 @@ export async function sendMessage(
   params: { room: string; content: string; sender: string },
   idempotencyKey?: string
 ): Promise<Message> {
+  // Clean the message content
+  const cleanedContent = params.content.trim();
+  if (!cleanedContent) {
+    throw new Error("Message content cannot be empty");
+  }
+
   const res = await fetch(`${BASE_URL}/messages/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       ...(idempotencyKey ? { "Idempotency-Key": idempotencyKey } : {}),
     },
-    body: JSON.stringify(params),
+    body: JSON.stringify({
+      ...params,
+      content: cleanedContent,
+    }),
   });
-  if (!res.ok) throw new Error(`Failed to send message (${res.status})`);
+
+  if (!res.ok) {
+    const errorText = await res.text();
+    throw new Error(`Failed to send message (${res.status}): ${errorText}`);
+  }
+
   return res.json();
 }
 

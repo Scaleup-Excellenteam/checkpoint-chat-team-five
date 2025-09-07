@@ -50,7 +50,13 @@ function GeneralRoom() {
             controller.signal
           );
           if (incoming.length) {
-            setMessages((prev) => [...prev, ...incoming]);
+            // Filter out messages from the current user to avoid duplicates
+            const filteredIncoming = incoming.filter(
+              (msg) => msg.sender !== user
+            );
+            if (filteredIncoming.length) {
+              setMessages((prev) => [...prev, ...filteredIncoming]);
+            }
           }
         } catch (_) {
           // brief backoff on error
@@ -73,7 +79,8 @@ function GeneralRoom() {
     try {
       const created = await sendMessage({ room, content, sender: user });
       setMessages((prev) => [...prev, created]);
-    } catch (_) {
+    } catch (error) {
+      console.error("Failed to send message:", error);
       // fallback: reinsert locally on failure so UI doesn't feel broken
       setMessages((prev) => [
         ...prev,

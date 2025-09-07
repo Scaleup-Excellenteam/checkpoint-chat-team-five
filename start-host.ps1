@@ -18,7 +18,16 @@ try {
 # Get IP address
 Write-Host "Getting your IP address..." -ForegroundColor Cyan
 try {
-    $ipAddress = (Get-NetIPAddress -AddressFamily IPv4 | Where-Object {$_.IPAddress -like "192.168.*" -or $_.IPAddress -like "10.*" -or $_.IPAddress -like "172.*"} | Select-Object -First 1).IPAddress
+    # Get all IPv4 addresses and prioritize 10.x.x.x networks
+    $allIPs = Get-NetIPAddress -AddressFamily IPv4 | Where-Object {$_.IPAddress -like "192.168.*" -or $_.IPAddress -like "10.*" -or $_.IPAddress -like "172.*"}
+    
+    # Prioritize 10.x.x.x addresses first
+    $ipAddress = ($allIPs | Where-Object {$_.IPAddress -like "10.*"} | Select-Object -First 1).IPAddress
+    if (-not $ipAddress) {
+        # Fallback to other private networks
+        $ipAddress = ($allIPs | Select-Object -First 1).IPAddress
+    }
+    
     if ($ipAddress) {
         Write-Host "Your IP address: $ipAddress" -ForegroundColor Green
     } else {
@@ -74,10 +83,13 @@ try {
 Write-Host ""
 Write-Host "Setting up frontend environment..." -ForegroundColor Cyan
 if ($ipAddress) {
-    "VITE_API_URL=http://$ipAddress`:8000" | Out-File -FilePath ".env" -Encoding UTF8
+    $apiUrl = "http://$ipAddress`:8000"
 } else {
-    "VITE_API_URL=http://localhost:8000" | Out-File -FilePath ".env" -Encoding UTF8
+    $apiUrl = "http://localhost:8000"
 }
+
+"VITE_API_URL=$apiUrl" | Out-File -FilePath ".env" -Encoding UTF8
+Write-Host "Frontend will connect to: $apiUrl" -ForegroundColor Cyan
 
 Write-Host ""
 Write-Host "Starting backend server..." -ForegroundColor Green

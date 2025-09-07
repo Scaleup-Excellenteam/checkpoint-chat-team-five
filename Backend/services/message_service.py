@@ -12,9 +12,12 @@ class MessageService:
     
     async def create_message(self, message_data: MessageCreate, idempotency_key: Optional[str] = None) -> MessageResponse:
         try:
+            # Clean the content using the MessageCreate method
+            cleaned_content = message_data.clean_content()
+            
             message = storage.add_message(
                 room=message_data.room,
-                content=message_data.content,
+                content=cleaned_content,
                 sender=message_data.sender,
                 idempotency_key=idempotency_key
             )
