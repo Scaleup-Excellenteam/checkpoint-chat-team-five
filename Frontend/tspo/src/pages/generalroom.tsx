@@ -5,7 +5,7 @@ import "../App.css";
 import {
   fetchMessages,
   sendMessage,
-  pollMessages,
+  openWebSocket,
   type Message,
 } from "../lib/api";
 
@@ -36,38 +36,29 @@ function GeneralRoom() {
     };
   }, [room]);
 
-  // start long-poll loop
+  // open WebSocket
   useEffect(() => {
-    let cancelled = false;
-    const loop = async () => {
-      while (!cancelled) {
-        try {
-          abortRef.current?.abort();
-          const controller = new AbortController();
-          abortRef.current = controller;
-          const incoming = await pollMessages(
-            { room, user, timeoutSec: 25 },
-            controller.signal
-          );
-          if (incoming.length) {
-            // Filter out messages from the current user to avoid duplicates
-            const filteredIncoming = incoming.filter(
-              (msg) => msg.sender !== user
-            );
-            if (filteredIncoming.length) {
-              setMessages((prev) => [...prev, ...filteredIncoming]);
-            }
-          }
-        } catch (_) {
-          // brief backoff on error
-          await new Promise((r) => setTimeout(r, 500));
+    const ws = openWebSocket(room, user);
+    ws.onmessage = (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        if (data.type === "chat") {
+          setMessages((prev) => [
+            ...prev,
+            {
+              id: data.id,
+              room: data.room,
+              content: data.content,
+              sender: data.sender,
+              timestamp: data.timestamp,
+              processed: true,
+            },
+          ]);
         }
-      }
+      } catch {}
     };
-    loop();
     return () => {
-      cancelled = true;
-      abortRef.current?.abort();
+      ws.close();
     };
   }, [room, user]);
 
@@ -77,22 +68,11 @@ function GeneralRoom() {
     const content = message;
     setMessage("");
     try {
-      const created = await sendMessage({ room, content, sender: user });
-      setMessages((prev) => [...prev, created]);
+      // send via WebSocket if possible by writing to the socket directly
+      // but since we don't hold ws here, still use REST to persist
+      await sendMessage({ room, content, sender: user });
     } catch (error) {
       console.error("Failed to send message:", error);
-      // fallback: reinsert locally on failure so UI doesn't feel broken
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: `tmp-${Date.now()}`,
-          room,
-          content,
-          sender: user,
-          timestamp: new Date().toISOString(),
-          processed: false,
-        },
-      ]);
     } finally {
       setSending(false);
     }

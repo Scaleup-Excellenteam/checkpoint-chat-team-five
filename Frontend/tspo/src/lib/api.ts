@@ -77,3 +77,12 @@ export async function pollMessages(
   const data: { messages: Message[]; timeout: boolean } = await res.json();
   return data.messages || [];
 }
+
+export function openWebSocket(room: string, sender: string): WebSocket {
+  const wsBase = (BASE_URL || "").replace(/^http/, "ws");
+  return new WebSocket(
+    `${wsBase.replace(/\/$/, "")}/ws/${encodeURIComponent(
+      room
+    )}/${encodeURIComponent(sender)}`
+  );
+}
