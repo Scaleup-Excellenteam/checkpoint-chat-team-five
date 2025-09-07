@@ -1,0 +1,61 @@
+// Minimal API client for TSPO backend
+
+export type Message = {
+  id: string;
+  room: string;
+  content: string;
+  sender: string;
+  timestamp: string;
+  processed: boolean;
+};
+
+type MessageListResponse = {
+  messages: Message[];
+  total: number;
+  has_more: boolean;
+};
+
+const BASE_URL =
+  (import.meta as any)?.env?.VITE_API_URL || "http://localhost:8000";
+
+export async function fetchMessages(
+  room: string,
+  limit = 50
+): Promise<Message[]> {
+  const res = await fetch(
+    `${BASE_URL}/messages/?room=${encodeURIComponent(room)}&limit=${limit}`
+  );
+  if (!res.ok) throw new Error(`Failed to fetch messages (${res.status})`);
+  const data: MessageListResponse = await res.json();
+  return data.messages;
+}
+
+export async function sendMessage(
+  params: { room: string; content: string; sender: string },
+  idempotencyKey?: string
+): Promise<Message> {
+  const res = await fetch(`${BASE_URL}/messages/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...(idempotencyKey ? { "Idempotency-Key": idempotencyKey } : {}),
+    },
+    body: JSON.stringify(params),
+  });
+  if (!res.ok) throw new Error(`Failed to send message (${res.status})`);
+  return res.json();
+}
+
+export async function pollMessages(
+  params: { room: string; user: string; timeoutSec?: number },
+  signal?: AbortSignal
+): Promise<Message[]> {
+  const { room, user, timeoutSec = 30 } = params;
+  const url = `${BASE_URL}/messages/poll?room=${encodeURIComponent(
+    room
+  )}&user=${encodeURIComponent(user)}&timeout_sec=${timeoutSec}`;
+  const res = await fetch(url, { signal });
+  if (!res.ok) throw new Error(`Polling failed (${res.status})`);
+  const data: { messages: Message[]; timeout: boolean } = await res.json();
+  return data.messages || [];
+}
