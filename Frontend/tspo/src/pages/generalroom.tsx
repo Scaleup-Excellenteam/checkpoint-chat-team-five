@@ -19,6 +19,7 @@ function GeneralRoom() {
     return `user-${Math.random().toString(36).slice(2, 8)}`;
   }, []);
   const abortRef = useRef<AbortController | null>(null);
+  const wsRef = useRef<WebSocket | null>(null);
 
   // load initial history
   useEffect(() => {
@@ -39,6 +40,10 @@ function GeneralRoom() {
   // open WebSocket
   useEffect(() => {
     const ws = openWebSocket(room, user);
+    wsRef.current = ws;
+    ws.onopen = () => {
+      // connected
+    };
     ws.onmessage = (event) => {
       try {
         const data = JSON.parse(event.data);
@@ -58,7 +63,10 @@ function GeneralRoom() {
       } catch {}
     };
     return () => {
-      ws.close();
+      try {
+        ws.close();
+      } catch {}
+      wsRef.current = null;
     };
   }, [room, user]);
 
@@ -68,9 +76,13 @@ function GeneralRoom() {
     const content = message;
     setMessage("");
     try {
-      // send via WebSocket if possible by writing to the socket directly
-      // but since we don't hold ws here, still use REST to persist
-      await sendMessage({ room, content, sender: user });
+      const ws = wsRef.current;
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(content);
+      } else {
+        // fallback to REST persistence if WS not ready
+        await sendMessage({ room, content, sender: user });
+      }
     } catch (error) {
       console.error("Failed to send message:", error);
     } finally {
