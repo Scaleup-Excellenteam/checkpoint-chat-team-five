@@ -1,4 +1,4 @@
-import { ChangeEvent, KeyboardEvent } from "react";
+import type { ChangeEvent, KeyboardEvent } from "react";
 
 interface InputProps {
   type?: "text" | "email" | "password" | "number";
