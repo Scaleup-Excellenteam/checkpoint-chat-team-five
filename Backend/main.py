@@ -8,6 +8,7 @@ from fastapi.responses import JSONResponse
 from core.config import settings
 from core.logging import logger
 from api import health, messages, forward, socket
+from api import ws as ws_routes
 from services.socket_service import socket_server
 from services.message_service import message_service
 
@@ -46,6 +47,7 @@ app.include_router(health.router)
 app.include_router(messages.router)
 app.include_router(forward.router)
 app.include_router(socket.router)
+app.include_router(ws_routes.router)
 
 
 @app.get("/")

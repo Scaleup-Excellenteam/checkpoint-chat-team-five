@@ -19,7 +19,6 @@ function GeneralRoom() {
     // simple ephemeral user name per tab
     return `user-${Math.random().toString(36).slice(2, 8)}`;
   }, []);
-  const abortRef = useRef<AbortController | null>(null);
   const wsRef = useRef<WebSocket | null>(null);
   const seenIdsRef = useRef<Set<string>>(new Set());
 

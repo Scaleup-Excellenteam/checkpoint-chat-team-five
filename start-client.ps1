@@ -40,7 +40,7 @@ try {
 
 Write-Host ""
 Write-Host "Installing frontend dependencies..." -ForegroundColor Cyan
-cd Frontend\tspo
+Set-Location Frontend\tspo
 try {
     npm install
     if ($LASTEXITCODE -ne 0) {
@@ -80,9 +80,9 @@ try {
 
 Write-Host ""
 Write-Host "Starting frontend client..." -ForegroundColor Green
-Write-Host "Frontend (local):    http://localhost:5173" -ForegroundColor Cyan
-Write-Host "Frontend (for LAN):  http://$env:COMPUTERNAME`:5173" -ForegroundColor Cyan
-Write-Host "Connecting to server: http://$serverIP`:8000" -ForegroundColor Cyan
+Write-Host "Open this on the client:   http://localhost:5173" -ForegroundColor Cyan
+Write-Host "Host backend API is at:    http://$serverIP`:8000" -ForegroundColor Cyan
+Write-Host "Host frontend (optional):  http://$serverIP`:5173" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Press Ctrl+C to stop the client" -ForegroundColor Yellow
 Write-Host ""
@@ -95,8 +95,8 @@ try {
     Start-Process powershell -Verb runAs -ArgumentList 'netsh advfirewall firewall add rule name="Vite Dev 5173" dir=in action=allow protocol=TCP localport=5173' | Out-Null
 } catch {}
 
-# Serve over LAN
-npm run dev -- --host
+# Serve over LAN (vite.config.js sets host: true)
+npm run dev
 
 Write-Host ""
 Write-Host "Client stopped" -ForegroundColor Yellow

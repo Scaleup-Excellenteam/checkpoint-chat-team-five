@@ -50,7 +50,7 @@ try {
 
 Write-Host ""
 Write-Host "Installing backend dependencies..." -ForegroundColor Cyan
-cd Backend
+Set-Location Backend
 try {
     python -m pip install fastapi uvicorn aiohttp requests
     if ($LASTEXITCODE -ne 0) {
@@ -66,7 +66,7 @@ try {
 
 Write-Host ""
 Write-Host "Installing frontend dependencies..." -ForegroundColor Cyan
-cd ..\Frontend\tspo
+Set-Location ..\Frontend\tspo
 try {
     npm install
     if ($LASTEXITCODE -ne 0) {
@@ -83,7 +83,6 @@ try {
 Write-Host ""
 Write-Host "Setting up frontend environment..." -ForegroundColor Cyan
 # Try to read SYSTEM_IP from root .env
-$rootEnvPath = Join-Path (Split-Path (Get-Location) -Leaf) ".env"
 try {
     if (Test-Path "..\..\.env") {
         $envContent = Get-Content "..\..\.env" -Raw
@@ -110,15 +109,15 @@ Write-Host "API Documentation: http://$ipAddress`:8000/docs" -ForegroundColor Cy
 Write-Host ""
 
 # Start backend in background
-cd ..\..\Backend
+Set-Location ..\..\Backend
 Start-Process -FilePath "python" -ArgumentList "run_server.py", "--mode", "both", "--host", "0.0.0.0", "--port", "8000", "--socket-port", "8888" -WindowStyle Minimized
 
 # Wait a moment for backend to start
 Start-Sleep -Seconds 3
 
 Write-Host "Starting frontend..." -ForegroundColor Green
-Write-Host "Frontend (local):    http://localhost:5173" -ForegroundColor Cyan
-Write-Host "Frontend (for LAN):  http://$serverIP`:5173" -ForegroundColor Cyan
+Write-Host "Frontend (open on this host):  http://localhost:5173" -ForegroundColor Cyan
+Write-Host "Frontend (share with clients): http://$serverIP`:5173" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Share this information with other users:" -ForegroundColor Yellow
 Write-Host "  - Backend API: http://$ipAddress`:8000" -ForegroundColor White
@@ -128,7 +127,7 @@ Write-Host "Press Ctrl+C to stop all services" -ForegroundColor Yellow
 Write-Host ""
 
 # Start frontend with API URL env set for this session only
-cd ..\Frontend\tspo
+Set-Location ..\Frontend\tspo
 $env:VITE_API_URL = $apiUrl
 $env:VITE_SYSTEM_IP = $serverIP
 
@@ -137,8 +136,8 @@ try {
     Start-Process powershell -Verb runAs -ArgumentList 'netsh advfirewall firewall add rule name="Vite Dev 5173" dir=in action=allow protocol=TCP localport=5173' | Out-Null
 } catch {}
 
-# Serve over LAN
-npm run dev -- --host
+# Serve over LAN (vite.config.js sets host: true)
+npm run dev
 
 Write-Host ""
 Write-Host "Stopping services..." -ForegroundColor Yellow
