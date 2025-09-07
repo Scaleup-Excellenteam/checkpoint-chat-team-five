@@ -56,7 +56,6 @@ try {
 
 Write-Host ""
 Write-Host "Setting up frontend environment..." -ForegroundColor Cyan
-"VITE_API_URL=http://$serverIP`:8000" | Out-File -FilePath ".env" -Encoding UTF8
 
 Write-Host ""
 Write-Host "Testing connection to server..." -ForegroundColor Cyan
@@ -81,14 +80,23 @@ try {
 
 Write-Host ""
 Write-Host "Starting frontend client..." -ForegroundColor Green
-Write-Host "Frontend will be available at: http://localhost:5173" -ForegroundColor Cyan
+Write-Host "Frontend (local):    http://localhost:5173" -ForegroundColor Cyan
+Write-Host "Frontend (for LAN):  http://$env:COMPUTERNAME`:5173" -ForegroundColor Cyan
 Write-Host "Connecting to server: http://$serverIP`:8000" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Press Ctrl+C to stop the client" -ForegroundColor Yellow
 Write-Host ""
 
-# Start frontend
-npm run dev
+# Start frontend with API URL env set for this session only
+$env:VITE_API_URL = "http://$serverIP`:8000"
+
+# Open firewall for Vite dev server (port 5173) - will prompt for admin
+try {
+    Start-Process powershell -Verb runAs -ArgumentList 'netsh advfirewall firewall add rule name="Vite Dev 5173" dir=in action=allow protocol=TCP localport=5173' | Out-Null
+} catch {}
+
+# Serve over LAN
+npm run dev -- --host
 
 Write-Host ""
 Write-Host "Client stopped" -ForegroundColor Yellow

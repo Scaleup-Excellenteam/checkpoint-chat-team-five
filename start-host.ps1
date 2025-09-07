@@ -101,8 +101,6 @@ if (-not $serverIP) {
 if (-not $serverIP) { $serverIP = "localhost" }
 
 $apiUrl = "http://$serverIP`:8000"
-"VITE_SYSTEM_IP=$serverIP" | Out-File -FilePath ".env" -Encoding UTF8
-"VITE_API_URL=$apiUrl" | Add-Content ".env"
 Write-Host "Frontend will connect to: $apiUrl" -ForegroundColor Cyan
 
 Write-Host ""
@@ -119,7 +117,8 @@ Start-Process -FilePath "python" -ArgumentList "run_server.py", "--mode", "both"
 Start-Sleep -Seconds 3
 
 Write-Host "Starting frontend..." -ForegroundColor Green
-Write-Host "Frontend will be available at: http://localhost:5173" -ForegroundColor Cyan
+Write-Host "Frontend (local):    http://localhost:5173" -ForegroundColor Cyan
+Write-Host "Frontend (for LAN):  http://$serverIP`:5173" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Share this information with other users:" -ForegroundColor Yellow
 Write-Host "  - Backend API: http://$ipAddress`:8000" -ForegroundColor White
@@ -128,9 +127,18 @@ Write-Host ""
 Write-Host "Press Ctrl+C to stop all services" -ForegroundColor Yellow
 Write-Host ""
 
-# Start frontend
+# Start frontend with API URL env set for this session only
 cd ..\Frontend\tspo
-npm run dev
+$env:VITE_API_URL = $apiUrl
+$env:VITE_SYSTEM_IP = $serverIP
+
+# Open firewall for Vite dev server (port 5173) - will prompt for admin
+try {
+    Start-Process powershell -Verb runAs -ArgumentList 'netsh advfirewall firewall add rule name="Vite Dev 5173" dir=in action=allow protocol=TCP localport=5173' | Out-Null
+} catch {}
+
+# Serve over LAN
+npm run dev -- --host
 
 Write-Host ""
 Write-Host "Stopping services..." -ForegroundColor Yellow
