@@ -1,0 +1,25 @@
+
+# Logs
+Frontend/tspo/logs
+Frontend/tspo/*.log
+Frontend/tspo/npm-debug.log*
+Frontend/tspo/yarn-debug.log*
+Frontend/tspo/yarn-error.log*
+Frontend/tspo/pnpm-debug.log*
+Frontend/tspo/lerna-debug.log*
+
+Frontend/tspo/node_modules
+Frontend/tspo/dist
+Frontend/tspo/dist-ssr
+Frontend/tspo/*.local
+
+# Editor directories and files
+Frontend/tspo/.vscode/*
+Frontend/tspo/!.vscode/extensions.json
+Frontend/tspo/.idea
+Frontend/tspo/.DS_Store
+Frontend/tspo/*.suo
+Frontend/tspo/*.ntvs*
+Frontend/tspo/*.njsproj
+Frontend/tspo/*.sln
+Frontend/tspo/*.sw?
