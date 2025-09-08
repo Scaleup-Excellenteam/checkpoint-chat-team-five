@@ -2,19 +2,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Input } from "../components";
 import "../App.css";
-import {
-  fetchMessages,
-  sendMessage,
-  openWebSocket,
-  type Message,
-} from "../lib/api";
+import { fetchMessages, openWebSocket, type Message } from "../lib/api";
 
 function GeneralRoom() {
   const room = "general";
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [sending, setSending] = useState(false);
-  const [wsOpen, setWsOpen] = useState(false);
   const user = useMemo(() => {
     // simple ephemeral user name per tab
     return `user-${Math.random().toString(36).slice(2, 8)}`;
@@ -45,9 +39,7 @@ function GeneralRoom() {
   useEffect(() => {
     const ws = openWebSocket(room, user);
     wsRef.current = ws;
-    ws.onopen = () => {
-      setWsOpen(true);
-    };
+    ws.onopen = () => {};
     ws.onmessage = (event) => {
       try {
         const data = JSON.parse(event.data);
@@ -69,12 +61,8 @@ function GeneralRoom() {
         }
       } catch {}
     };
-    ws.onerror = () => {
-      setWsOpen(false);
-    };
-    ws.onclose = () => {
-      setWsOpen(false);
-    };
+    ws.onerror = () => {};
+    ws.onclose = () => {};
     return () => {
       try {
         ws.close();
@@ -82,39 +70,6 @@ function GeneralRoom() {
       wsRef.current = null;
     };
   }, [room, user]);
-
-  // Fallback: long-poll when WS is not open
-  useEffect(() => {
-    if (wsOpen) return; // WebSocket handles realtime when connected
-    let cancelled = false;
-    const loop = async () => {
-      while (!cancelled) {
-        try {
-          const { pollMessages } = await import("../lib/api");
-          const incoming = await pollMessages({ room, user, timeoutSec: 25 });
-          if (incoming.length) {
-            const toAdd: Message[] = [];
-            for (const m of incoming) {
-              if (!seenIdsRef.current.has(m.id)) {
-                seenIdsRef.current.add(m.id);
-                toAdd.push(m);
-              }
-            }
-            if (toAdd.length) {
-              setMessages((prev) => [...prev, ...toAdd]);
-            }
-          }
-        } catch {
-          // small backoff
-          await new Promise((r) => setTimeout(r, 500));
-        }
-      }
-    };
-    loop();
-    return () => {
-      cancelled = true;
-    };
-  }, [room, user, wsOpen]);
 
   const handleSend = async () => {
     if (message.trim() === "" || sending) return;
@@ -125,9 +80,6 @@ function GeneralRoom() {
       const ws = wsRef.current;
       if (ws && ws.readyState === WebSocket.OPEN) {
         ws.send(content);
-      } else {
-        // fallback to REST persistence if WS not ready
-        await sendMessage({ room, content, sender: user });
       }
     } catch (error) {
       console.error("Failed to send message:", error);

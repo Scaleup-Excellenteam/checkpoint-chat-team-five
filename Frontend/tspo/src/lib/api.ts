@@ -68,20 +68,6 @@ export async function sendMessage(
   return res.json();
 }
 
-export async function pollMessages(
-  params: { room: string; user: string; timeoutSec?: number },
-  signal?: AbortSignal
-): Promise<Message[]> {
-  const { room, user, timeoutSec = 30 } = params;
-  const url = `${BASE_URL}/messages/poll?room=${encodeURIComponent(
-    room
-  )}&user=${encodeURIComponent(user)}&timeout_sec=${timeoutSec}`;
-  const res = await fetch(url, { signal });
-  if (!res.ok) throw new Error(`Polling failed (${res.status})`);
-  const data: { messages: Message[]; timeout: boolean } = await res.json();
-  return data.messages || [];
-}
-
 export function openWebSocket(room: string, sender: string): WebSocket {
   const wsBase = (BASE_URL || "").replace(/^http/, "ws");
   return new WebSocket(

@@ -39,7 +39,6 @@ class InMemoryStorage:
         self._rooms: Dict[str, Room] = {}
         self._forward_config: Optional[ForwardConfig] = None
         self._idempotency_keys: set = set()
-        self._poll_waiters: Dict[str, List] = defaultdict(list)
         self._start_time = time.time()
         self._lock = Lock()
         logger.info("Storage initialized")
@@ -80,7 +79,6 @@ class InMemoryStorage:
             if idempotency_key:
                 self._idempotency_keys.add(idempotency_key)
             
-            self._notify_poll_waiters(room, message)
             return message
     
     def get_messages(self, room: str, since_ts: Optional[datetime] = None,
@@ -115,21 +113,7 @@ class InMemoryStorage:
     def get_forward_config(self) -> Optional[ForwardConfig]:
         return self._forward_config
     
-    def add_poll_waiter(self, room: str, waiter):
-        self._poll_waiters[room].append(waiter)
     
-    def remove_poll_waiter(self, room: str, waiter):
-        if waiter in self._poll_waiters[room]:
-            self._poll_waiters[room].remove(waiter)
-    
-    def _notify_poll_waiters(self, room: str, message: Message):
-        waiters = self._poll_waiters[room].copy()
-        self._poll_waiters[room].clear()
-        for waiter in waiters:
-            try:
-                waiter.set_result([message])
-            except Exception as e:
-                logger.error(f"Error notifying poll waiter: {e}")
 
 
 storage = InMemoryStorage()
