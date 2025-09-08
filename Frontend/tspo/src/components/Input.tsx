@@ -12,6 +12,7 @@ interface InputProps {
   className?: string;
   id?: string;
   name?: string;
+  maxLength?: number;
 }
 
 function Input({
@@ -26,6 +27,7 @@ function Input({
   className = "",
   id,
   name,
+  maxLength,
 }: InputProps) {
   const inputId = id || name;
 
@@ -46,6 +48,7 @@ function Input({
         placeholder={placeholder}
         required={required}
         disabled={disabled}
+        maxLength={maxLength}
         className={`input ${className}`.trim()}
       />
     </div>

@@ -85,14 +85,18 @@ function GeneralRoom() {
   }, [room, session, displayName]);
 
   const handleSend = async () => {
-    if (message.trim() === "" || sending) return;
+    const trimmed = message.trim();
+    if (trimmed === "" || sending) return;
+    if (trimmed.length > 100) {
+      alert("Message must be 100 characters or fewer.");
+      return;
+    }
     setSending(true);
-    const content = message;
     setMessage("");
     try {
       const ws = wsRef.current;
       if (ws && ws.readyState === WebSocket.OPEN) {
-        ws.send(content);
+        ws.send(trimmed);
       }
     } catch (error) {
       console.error("Failed to send message:", error);
@@ -179,6 +183,7 @@ function GeneralRoom() {
             onKeyDown={handleKeyPress}
             placeholder="Type your message about pizza..."
             className="message-input"
+            maxLength={100}
           />
           <Button
             onClick={handleSend}
@@ -188,6 +193,16 @@ function GeneralRoom() {
           >
             Send
           </Button>
+        </div>
+        <div
+          style={{
+            textAlign: "right",
+            fontSize: "0.85em",
+            color: message.length > 100 ? "#d14343" : "#777",
+            marginTop: "0.25rem",
+          }}
+        >
+          {message.length}/100
         </div>
       </div>
     </div>
