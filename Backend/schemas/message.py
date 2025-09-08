@@ -5,9 +5,9 @@ import re
 
 
 class MessageCreate(BaseModel):
-    room: str = Field(..., min_length=1, max_length=100)
-    content: str = Field(..., min_length=1, max_length=2000)
-    sender: str = Field(..., min_length=1, max_length=100)
+    room: str = Field(..., min_length=1, max_length=20)
+    content: str = Field(..., min_length=1, max_length=100)
+    sender: str = Field(..., min_length=1, max_length=20)
     
     def clean_content(self):
         if not self.content or not self.content.strip():

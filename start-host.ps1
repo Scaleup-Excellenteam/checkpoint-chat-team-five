@@ -110,7 +110,7 @@ Write-Host ""
 
 # Start backend in background
 Set-Location ..\..\Backend
-Start-Process -FilePath "python" -ArgumentList "run_server.py", "--mode", "both", "--host", "0.0.0.0", "--port", "8000", "--socket-port", "8888" -WindowStyle Minimized
+Start-Process -FilePath "python" -ArgumentList "run_server.py", "--host", "0.0.0.0", "--port", "8000" -WindowStyle Minimized
 
 # Wait a moment for backend to start
 Start-Sleep -Seconds 3

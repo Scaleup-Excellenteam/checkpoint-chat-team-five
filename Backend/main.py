@@ -7,25 +7,19 @@ from fastapi.responses import JSONResponse
 
 from core.config import settings
 from core.logging import logger
-from api import health, messages, forward, socket
+from api import health, messages, forward
 from api import ws as ws_routes
 from api import users
-from services.socket_service import socket_server
 from services.message_service import message_service
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     logger.info("Starting TSPO Chat API...")
-    if socket_server.start():
-        logger.info("Socket server started")
-    else:
-        logger.warning("Failed to start socket server")
     
     yield
     
     logger.info("Shutting down...")
-    socket_server.stop()
     await message_service.cleanup()
     logger.info("Shutdown complete")
 
@@ -47,7 +41,6 @@ app.add_middleware(
 app.include_router(health.router)
 app.include_router(messages.router)
 app.include_router(forward.router)
-app.include_router(socket.router)
 app.include_router(ws_routes.router)
 app.include_router(users.router)
 
@@ -58,11 +51,6 @@ async def root():
         "message": "Welcome to TSPO Chat API",
         "version": settings.API_VERSION,
         "docs_url": "/docs",
-        "socket_server": {
-            "host": settings.SOCKET_HOST,
-            "port": settings.SOCKET_PORT,
-            "running": socket_server.running
-        }
     }
 
 
@@ -74,7 +62,6 @@ async def global_exception_handler(request, exc):
 
 def signal_handler(signum, frame):
     logger.info(f"Received signal {signum}, shutting down...")
-    socket_server.stop()
     sys.exit(0)
 
 

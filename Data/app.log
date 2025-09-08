@@ -1,67 +1,19 @@
-{"timestamp": "2025-09-08T11:40:04+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T11:40:04+0300", "level": "INFO", "message": "Starting TSPO Chat Backend in both mode", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T11:40:04+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T11:40:04+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T11:40:04+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T11:40:04+0300", "level": "INFO", "message": "Starting FastAPI server on 0.0.0.0:8000", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T11:40:05+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
-{"timestamp": "2025-09-08T11:40:05+0300", "level": "INFO", "message": "Starting TSPO Chat API...", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T11:40:05+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T11:40:05+0300", "level": "INFO", "message": "Socket server started", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T11:40:05+0300", "level": "INFO", "message": "Shutting down...", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T11:40:05+0300", "level": "INFO", "message": "Socket server stopped", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T11:40:05+0300", "level": "INFO", "message": "Shutdown complete", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T11:48:27+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T11:48:27+0300", "level": "INFO", "message": "Starting TSPO Chat Backend in both mode", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T11:48:27+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T11:48:27+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T11:48:27+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T11:48:27+0300", "level": "INFO", "message": "Starting FastAPI server on 0.0.0.0:8000", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T11:48:27+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
-{"timestamp": "2025-09-08T11:48:27+0300", "level": "INFO", "message": "Starting TSPO Chat API...", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T11:48:27+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T11:48:27+0300", "level": "INFO", "message": "Socket server started", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T11:48:27+0300", "level": "INFO", "message": "Shutting down...", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T11:48:27+0300", "level": "INFO", "message": "Socket server stopped", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T11:48:27+0300", "level": "INFO", "message": "Shutdown complete", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T12:07:55+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:07:55+0300", "level": "INFO", "message": "Starting TSPO Chat Backend in both mode", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T12:07:55+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:07:55+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:07:55+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T12:07:55+0300", "level": "INFO", "message": "Starting FastAPI server on 0.0.0.0:8000", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T12:07:55+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
-{"timestamp": "2025-09-08T12:07:55+0300", "level": "INFO", "message": "Starting TSPO Chat API...", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T12:07:55+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:07:55+0300", "level": "INFO", "message": "Socket server started", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T12:07:55+0300", "level": "INFO", "message": "Shutting down...", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T12:07:55+0300", "level": "INFO", "message": "Socket server stopped", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:07:55+0300", "level": "INFO", "message": "Shutdown complete", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T12:10:52+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:10:52+0300", "level": "INFO", "message": "Starting TSPO Chat Backend in both mode", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T12:10:52+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:10:52+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:10:52+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T12:10:52+0300", "level": "INFO", "message": "Starting FastAPI server on 0.0.0.0:8000", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T12:10:52+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
-{"timestamp": "2025-09-08T12:10:52+0300", "level": "INFO", "message": "Starting TSPO Chat API...", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T12:10:52+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:10:52+0300", "level": "INFO", "message": "Socket server started", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T12:10:52+0300", "level": "INFO", "message": "Shutting down...", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T12:10:52+0300", "level": "INFO", "message": "Socket server stopped", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:10:52+0300", "level": "INFO", "message": "Shutdown complete", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T12:12:13+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:12:13+0300", "level": "INFO", "message": "Starting TSPO Chat Backend in both mode", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T12:12:13+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:12:13+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:12:13+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T12:12:13+0300", "level": "INFO", "message": "Starting FastAPI server on 0.0.0.0:8000", "name": "tspo", "module": "run_server"}
-{"timestamp": "2025-09-08T12:12:13+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
-{"timestamp": "2025-09-08T12:12:14+0300", "level": "INFO", "message": "Starting TSPO Chat API...", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T12:12:14+0300", "level": "INFO", "message": "Socket server started on 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
-{"timestamp": "2025-09-08T12:12:14+0300", "level": "INFO", "message": "Socket server started", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T12:12:43+0300", "level": "INFO", "message": "WS connected: Lior in room general", "name": "tspo", "module": "ws"}
-{"timestamp": "2025-09-08T12:15:08+0300", "level": "INFO", "message": "WS connected: Noa in room general", "name": "tspo", "module": "ws"}
-{"timestamp": "2025-09-08T12:18:11+0300", "level": "INFO", "message": "WS disconnected: Noa in room general", "name": "tspo", "module": "ws"}
-{"timestamp": "2025-09-08T12:21:10+0300", "level": "INFO", "message": "Received signal 2, shutting down...", "name": "tspo", "module": "main"}
-{"timestamp": "2025-09-08T12:21:10+0300", "level": "INFO", "message": "Socket server stopped", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:03:06+0300", "level": "INFO", "message": "Starting TSPO Chat Backend in api mode", "name": "tspo", "module": "run_server"}
+{"timestamp": "2025-09-08T13:03:06+0300", "level": "INFO", "message": "Starting FastAPI server on 0.0.0.0:8000", "name": "tspo", "module": "run_server"}
+{"timestamp": "2025-09-08T13:03:06+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:03:07+0300", "level": "INFO", "message": "Starting TSPO Chat API...", "name": "tspo", "module": "main"}
+{"timestamp": "2025-09-08T13:03:07+0300", "level": "INFO", "message": "Shutting down...", "name": "tspo", "module": "main"}
+{"timestamp": "2025-09-08T13:03:07+0300", "level": "INFO", "message": "Shutdown complete", "name": "tspo", "module": "main"}
+{"timestamp": "2025-09-08T13:03:13+0300", "level": "INFO", "message": "WS.disconnect: sender=Lior room=general", "name": "tspo", "module": "ws"}
+{"timestamp": "2025-09-08T13:03:13+0300", "level": "INFO", "message": "WS.connect: sender=Lior room=general", "name": "tspo", "module": "ws"}
+{"timestamp": "2025-09-08T13:03:13+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=50 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:03:13+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:03:13+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=50 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:03:13+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:03:13+0300", "level": "INFO", "message": "WS.connect: sender=Lior room=general", "name": "tspo", "module": "ws"}
+{"timestamp": "2025-09-08T13:03:41+0300", "level": "INFO", "message": "WS.disconnect: sender=Noa room=general", "name": "tspo", "module": "ws"}
+{"timestamp": "2025-09-08T13:03:41+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=50 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:03:41+0300", "level": "INFO", "message": "API messages.get.ok: count=4 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:03:41+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=50 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:03:41+0300", "level": "INFO", "message": "API messages.get.ok: count=4 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:03:41+0300", "level": "INFO", "message": "WS.connect: sender=Noa room=general", "name": "tspo", "module": "ws"}
