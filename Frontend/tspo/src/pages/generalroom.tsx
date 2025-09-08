@@ -56,6 +56,10 @@ function GeneralRoom() {
     ws.onmessage = (event) => {
       try {
         const data = JSON.parse(event.data);
+        if (data.type === "error") {
+          alert(data.detail || "Message blocked by policy");
+          return;
+        }
         if (data.type === "chat") {
           if (!seenIdsRef.current.has(data.id)) {
             seenIdsRef.current.add(data.id);

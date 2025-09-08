@@ -2,6 +2,7 @@ from typing import Dict, Set
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from core.logging import logger
 from storage.memory import storage
+from services.dlp.text_validator import decide_for_text, enforce_or_raise, DLPViolation
 
 
 router = APIRouter()
@@ -48,7 +49,24 @@ async def websocket_endpoint(websocket: WebSocket, room: str, sender: str):
         await manager.broadcast(room, {"type": "join", "room": room, "sender": sender})
         while True:
             data = await websocket.receive_text()
-            # store message for history via REST
+            # DLP validation (fast local + Gemini if suspicious)
+            try:
+                decision = await decide_for_text(data)
+                enforce_or_raise(decision)
+            except DLPViolation as e:
+                # Notify sender only; do not broadcast/save
+                try:
+                    await websocket.send_json({
+                        "type": "error",
+                        "room": room,
+                        "sender": "server",
+                        "detail": str(e),
+                    })
+                except Exception:
+                    pass
+                continue
+
+            # store message and broadcast
             msg = storage.add_message(room=room, content=data, sender=sender)
             payload = {
                 "type": "chat",

@@ -11,6 +11,7 @@ from api import health, messages, forward
 from api import ws as ws_routes
 from api import users
 from services.message_service import message_service
+from services.dlp.text_validator import DLPViolation
 
 
 @asynccontextmanager
@@ -52,6 +53,11 @@ async def root():
         "version": settings.API_VERSION,
         "docs_url": "/docs",
     }
+
+
+@app.exception_handler(DLPViolation)
+async def dlp_violation_handler(request, exc: DLPViolation):
+    return JSONResponse(status_code=403, content={"detail": "DLP policy violation"})
 
 
 @app.exception_handler(Exception)
