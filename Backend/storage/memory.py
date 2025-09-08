@@ -68,26 +68,36 @@ class InMemoryStorage:
             self._rooms[room_name] = Room(name=room_name, created_at=datetime.utcnow())
         return self._rooms[room_name]
     
-    def add_message(self, room: str, content: str, sender: str, idempotency_key: Optional[str] = None) -> Message:
-        if idempotency_key and idempotency_key in self._idempotency_keys:
-            raise ValueError("Duplicate idempotency key")
-        
-        with self._lock:
-            self.create_room(room)
-            message = Message(
-                id=str(uuid.uuid4()),
-                room=room,
-                content=content,
-                sender=sender,
-                timestamp=datetime.utcnow()
-            )
-            self._messages[room].append(message)
-            self._rooms[room].message_count += 1
-            
-            if idempotency_key:
-                self._idempotency_keys.add(idempotency_key)
-            
-            return message
+   def add_message(self, room: str, content: str, sender: str, idempotency_key: Optional[str] = None) -> Message:
+    if idempotency_key and idempotency_key in self._idempotency_keys:
+        raise ValueError("Duplicate idempotency key")
+
+    # === DLP Guard: URL validation (לפני lock, ללא רשת) ===
+    try:
+        validate_urls_in_text(content)  # יזרוק InvalidUrl אם יש לפחות URL אחד לא תקין
+    except InvalidUrl as e:
+        # בשכבת ה-API/route נמפה ל-422/400; כאן רק מונעים כניסה לחדר
+        logger.warning(f"DLP invalid URL blocked: {e}")
+        raise
+    # === END DLP Guard ===
+
+    with self._lock:
+        self.create_room(room)
+        message = Message(
+            id=str(uuid.uuid4()),
+            room=room,
+            content=content,
+            sender=sender,
+            timestamp=datetime.utcnow()
+        )
+        self._messages[room].append(message)
+        self._rooms[room].message_count += 1
+
+        if idempotency_key:
+            self._idempotency_keys.add(idempotency_key)
+
+        return message
+
     
     def get_messages(self, room: str, since_ts: Optional[datetime] = None,
                     after_id: Optional[str] = None, limit: int = 50,
