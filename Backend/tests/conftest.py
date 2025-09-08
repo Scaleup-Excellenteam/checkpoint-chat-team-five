@@ -1,6 +1,8 @@
 import asyncio
 import pytest
+import pytest_asyncio
 from httpx import AsyncClient
+from httpx._transports.asgi import ASGITransport
 
 from main import app
 from storage.memory import storage
@@ -11,13 +13,19 @@ def reset_storage():
     storage._messages.clear()
     storage._rooms.clear()
     storage._idempotency_keys.clear()
-    storage._poll_waiters.clear()
     yield
 
 
-@pytest.fixture
+@pytest_asyncio.fixture
 async def async_client():
-    async with AsyncClient(app=app, base_url="http://test") as client:
+    transport = ASGITransport(app=app)
+    async with AsyncClient(transport=transport, base_url="http://test") as client:
         yield client
 
+@pytest.fixture
+def host():
+    return "localhost"
 
+@pytest.fixture
+def port():
+    return 8000

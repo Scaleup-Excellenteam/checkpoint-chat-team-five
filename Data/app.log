@@ -65,3 +65,479 @@
 {"timestamp": "2025-09-08T12:18:11+0300", "level": "INFO", "message": "WS disconnected: Noa in room general", "name": "tspo", "module": "ws"}
 {"timestamp": "2025-09-08T12:21:10+0300", "level": "INFO", "message": "Received signal 2, shutting down...", "name": "tspo", "module": "main"}
 {"timestamp": "2025-09-08T12:21:10+0300", "level": "INFO", "message": "Socket server stopped", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T12:52:09+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T12:52:09+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T12:53:27+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T12:53:27+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T12:53:49+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T12:53:49+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T12:58:44+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T12:58:44+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T12:59:22+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T12:59:22+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T12:59:40+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T12:59:40+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:00:49+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:00:49+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:01:29+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:01:29+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:01:30+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:30+0300", "level": "INFO", "message": "API messages.send.ok: id=47145c59-5ca0-4673-8314-d5487a9a378e room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:30+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:30+0300", "level": "INFO", "message": "API messages.send.ok: id=f5a7997a-5da8-4018-b3d4-8b60bdc3c9c7 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:30+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:30+0300", "level": "INFO", "message": "API messages.send.ok: id=03e1391a-cc20-4824-9ca2-b9dc65c43ba8 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:30+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:30+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:30+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=f5a7997a-5da8-4018-b3d4-8b60bdc3c9c7 limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:30+0300", "level": "INFO", "message": "API messages.get.ok: count=1 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:30+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:30+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:01:31+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:31+0300", "level": "INFO", "message": "API messages.send.ok: id=3a9ed03a-8159-455e-9dcc-51e08eeda5c1 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:31+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:31+0300", "level": "INFO", "message": "API messages.send.ok: id=8bbff1a9-664d-4c2b-a6a2-0897bc77cbdd room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:31+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:31+0300", "level": "INFO", "message": "API messages.send.ok: id=e1873071-558b-4d7c-91d1-088c7d297c9c room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:31+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:01:31+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:04:03+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:04:03+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send.ok: id=a0d94701-72ca-4289-bb39-3b58db22722e room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send.ok: id=3d92fb18-ae12-4526-b834-938045087cc0 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send.ok: id=d927e9e8-6b19-44c6-8f40-7fbee5f13430 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=3d92fb18-ae12-4526-b834-938045087cc0 limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.get.ok: count=1 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send.ok: id=6f912d48-d94f-4c38-a32a-b79ab00cdb55 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send.ok: id=b0c51c16-a36b-4363-af2e-de8ea9914303 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send.ok: id=0d7a75bf-6ba9-49ee-b242-0028d1094f68 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:04+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:04:43+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:04:43+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:04:43+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:43+0300", "level": "INFO", "message": "API messages.send.ok: id=1e1f3263-37c6-41a0-a26f-769e4e79b69e room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:43+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.send.ok: id=ce52da7e-2325-4ce3-8cbc-e0406e183299 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.send.ok: id=4ed21a7b-7429-4a8e-84bb-de4e34c167cf room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=ce52da7e-2325-4ce3-8cbc-e0406e183299 limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.get.ok: count=1 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.send.ok: id=01c9c401-7e63-4cc7-a171-fc01d721e57f room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.send.ok: id=1c77c84e-8e1b-4e89-a741-f406c644c71f room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.send.ok: id=fe08f5c8-cb03-4e92-bfd0-5e9e71bca0f8 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:04:44+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.send.ok: id=db110652-0bcf-4fdd-abca-04679c164388 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.send.ok: id=b1addc32-6125-48f8-8d5e-988239f44076 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.send.ok: id=1f66d343-6c3e-4dd9-add0-cea79025d6c1 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=b1addc32-6125-48f8-8d5e-988239f44076 limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.get.ok: count=1 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.send.ok: id=6fd1bbae-bdb6-449a-9024-f164c8cd0c76 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:43+0300", "level": "INFO", "message": "API messages.send.ok: id=deaac9dc-d46d-4081-843f-de97f510d6ee room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:44+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:44+0300", "level": "INFO", "message": "API messages.send.ok: id=22342a3d-dce3-45fe-8acd-e141ed1ad42c room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:44+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:05:44+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:05:59+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:05:59+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send.ok: id=8f277863-85ec-40ef-a176-08162c18e7cd room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send.ok: id=5c7d87d9-db01-4163-b25f-33e67021ea3f room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send.ok: id=cc56d85f-a2fa-40d8-a0cf-f2bb483c1c80 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=5c7d87d9-db01-4163-b25f-33e67021ea3f limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.get.ok: count=1 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send.ok: id=b8220f5b-3763-4043-93df-7c9a5d2ea143 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send.ok: id=0e93dc1b-f2bd-4dc9-bb57-68f1a791a1e8 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send.ok: id=5fb685dc-9426-49ef-9d62-c797c15c5ab4 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:06:00+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:07:50+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:07:50+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.send.ok: id=0184944f-485c-424c-9b51-4072a8c8d0a6 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.send.ok: id=e4219577-204b-4424-90e6-b36e0b510ebd room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.send.ok: id=a9144f64-2c1c-4a2e-9f71-4b96dfb2d8ef room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=e4219577-204b-4424-90e6-b36e0b510ebd limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.get.ok: count=1 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.send.ok: id=f0133530-6404-4303-98f4-122b1d71552d room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.send.ok: id=98686d4e-11bf-4b03-88c3-0fbc3864d6f2 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:07:51+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:08:10+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:08:10+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:08:27+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:08:27+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:08:36+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:08:36+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:10:07+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:10:07+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:10:48+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:10:48+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:10:56+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:10:56+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.send.ok: id=0f994cf6-5f8e-4a5f-86a9-5194470b1dc9 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.send.ok: id=469a719a-de0a-4dcf-9aac-eb9fb9a441d7 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.send.ok: id=ccb5e993-2e6b-4103-b115-da5dc55ee33d room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=469a719a-de0a-4dcf-9aac-eb9fb9a441d7 limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.get.ok: count=1 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.send.ok: id=4334a4ff-1b09-4114-bfde-e319117366ab room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.send.ok: id=0ef773ec-978e-4afc-98de-08c150c558fc room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:10:58+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:11:17+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:11:17+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.send.ok: id=d8255122-03f5-4a53-9d6c-bf9fc9a4e3a8 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.send.ok: id=b6cd22b7-fa20-4ad6-a5ae-4e6a53f5e846 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.send.ok: id=705770dd-1f1e-47c9-b1ff-6a2236070d35 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=b6cd22b7-fa20-4ad6-a5ae-4e6a53f5e846 limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.get.ok: count=1 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.send.ok: id=e3d86268-7d31-4138-a383-172e4341bbde room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.send.ok: id=e6d4a7a8-8e62-4cbc-a5b7-5b5fad67f992 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:11:19+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:12:20+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:12:20+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.send.ok: id=56a83231-48b0-45ae-81eb-c40c0a2d54d6 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.send.ok: id=8f44be1c-5610-4842-a6c8-fc218d43dcd7 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.send.ok: id=a12049ad-8ce5-47d8-b3e0-060bcd3ec993 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=8f44be1c-5610-4842-a6c8-fc218d43dcd7 limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.get.ok: count=1 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.send.ok: id=8ff49dcc-c87f-474b-bd07-1467009e2921 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.send.ok: id=7d35ad3c-a5e0-48f6-87cd-46f3a694d7be room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:12:38+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:13:11+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:13:11+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.send.ok: id=b9551d02-9ab1-4a89-a2eb-5cf2e95a5591 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.send.ok: id=8cbbd8bd-1354-4225-9e06-648e70e6defe room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.send.ok: id=cd379e14-fc40-4ef2-979d-137eb4109848 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=8cbbd8bd-1354-4225-9e06-648e70e6defe limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.get.ok: count=1 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.send.ok: id=1b9a1ed2-9e8d-4398-b6be-2b89aa7ca291 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.send.ok: id=64cf3f29-c50b-4d13-8d65-03532d0889fe room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:13:29+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:16:25+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:16:25+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:16:58+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:16:58+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.send.ok: id=b7c9a8d2-b2e1-497a-b8b9-f6144fb9b590 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.send.ok: id=d0142780-b831-4521-adf5-2666727076da room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.send.ok: id=7f5b7177-4c0c-4bad-a2aa-720285333dc0 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=d0142780-b831-4521-adf5-2666727076da limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.get.ok: count=1 has_more=False", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.send.ok: id=685a5a22-ed5c-47db-9a4b-49ba169b797c room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.send.ok: id=e0198a02-d11a-41da-b836-ffa8bca8c152 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:17:17+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:18:23+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:18:23+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:19:13+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:19:13+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:20:00+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:20:00+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=275f37ca-48b8-4277-a4e8-32be787eda77 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=9b3f01b0-1dcf-42bd-8825-d20f955e4004 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=b7adbbbf-998b-40ee-969a-613f02b36cec room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=46c09536-9b74-4812-97e5-b3b3e39db40d room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=ed0adde6-2756-4e5c-9bf9-84c93a0b9f8c room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=c311373d-32bc-4f7c-a160-6e70d89740c9 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=2ba7fba9-a4b0-4f27-8bfa-8d2fdd847242 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=1ffef558-5740-4414-a278-2b6a971fd7fc room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=e078044d-2db6-4bf9-857e-08aa4c76cc8b room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=4e26f0eb-8526-49c1-8b7a-375e7c2798c7 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=5960b150-4364-48c4-a6e6-ae8ddcae6eb9 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=878fbcb1-f0a8-43ae-bd9b-81fd062765be room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=10c05293-7585-470b-a698-8c8740e4eaa8 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=78550715-ba5c-4196-84b7-d46dc282da45 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=2ec3c25d-8434-4f6a-9075-8c22d39cc67b room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=4f95f50e-96bc-4f09-9dee-f8a6b20ffb38 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=5a91fe03-2a52-4feb-8e56-2ee58ca41588 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=8be2a1b0-ec6a-4e79-b366-8077f3119c9c room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=aa508b55-7a51-4010-ac9b-f5a7b13ebada room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.send.ok: id=e705e750-f87e-49e2-bac9-a3dc9a47da70 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=9b3f01b0-1dcf-42bd-8825-d20f955e4004 limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:01+0300", "level": "INFO", "message": "API messages.get.ok: count=10 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:02+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:02+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:20:02+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:02+0300", "level": "INFO", "message": "API messages.send.ok: id=9000aabd-23da-4727-ae85-302d674a02b6 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:02+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:02+0300", "level": "INFO", "message": "API messages.send.ok: id=69a41cf4-fc18-446a-bf11-7fd65176ebe0 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:02+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:20:02+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=e646411b-73eb-4585-8449-ab36fbaca2d6 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=03481bec-0bd9-4159-832a-1883aa19e603 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=2003ba38-a27f-4f5f-a20d-91bb081e0d4e room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=45743f5c-e369-4396-b45c-cfc80ffe1f0e room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=86c1d1e1-5e88-48f7-8376-53f5dfd44630 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=d166cb7e-73b9-4863-ba8e-536e20efa917 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=26e85af4-1120-4999-85f6-6d152ee3e4d1 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=1658c674-9627-439c-b215-592a0a3ce0f4 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=650ee148-28fd-47ea-87f8-c003986fb042 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=e5f2f439-a243-46d0-8d62-bfad9fbeaaf3 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=7e4b6008-07e6-4ee7-bcf1-8a7987aa8112 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=f49a1535-0e08-41eb-93c0-5014e49f3c8f room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=1c87c990-bf7d-4e1c-b3b5-b8aeda6a0638 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=71b26543-79d0-4e1c-9564-2f5bb56f1a4b room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=58b3d28a-1461-4cf5-b48a-5fd25f81d9f5 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=b4e14568-2fc6-47af-98a2-3f11653a8c5c room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=33062877-8cf9-4e4d-9381-a4f5315dd8e3 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=860feab9-9d75-47c9-ab6c-cdfb3c68ebc6 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=8a4dd43c-73d6-4615-a960-174a84288c91 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=5cdf3790-9ab8-4802-b4fa-91dce980db8a room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=03481bec-0bd9-4159-832a-1883aa19e603 limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.get.ok: count=10 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=a598d595-f750-4e7b-aee0-a59730f0c4c8 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send.ok: id=d3f3aa4d-ce06-42f0-9c4b-5b963159448f room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:08+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:23:29+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:23:29+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=1ec4cac9-398c-4ecb-8157-07993dae00b6 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=2fd521c6-bbe2-4347-8527-93b9cfa2b83b room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=96fc6aeb-1242-4da1-ac39-bba58d0cdb9c room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=16cca5f5-ddab-45b9-ac72-10d7a27453e5 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=e160c893-b5a0-4d74-a45b-8e48db8adc06 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=121e4c62-bef8-4925-86e3-cf68ff657daf room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=d66682f3-d07e-4ee5-bd98-5cd673757a43 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=71efd3d9-9581-4c1a-93e9-ac76f0630df0 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=1e291f4b-b6b7-4621-a8ba-55e3d15f1ec3 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=44c3646d-df88-4140-b927-7db16257a871 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=6c9c2e21-fbc6-4eb8-b3eb-37ef2c5d71a8 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=d69a0b94-e17e-44de-8a35-c51147c3b7fd room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=435c884a-efd0-455f-b5b6-65328d8da9ed room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=85721e80-d090-489b-bd0d-04d4a351e997 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=7cd00abd-2b5f-41b1-ae5a-e020ac9d9240 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=de3bbcce-4a55-4667-86e5-31936cab088e room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=8f1dfa81-8dba-4778-a2a0-165a2d3140a4 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=4135de1c-3bc7-44aa-9dd5-f93f3a61370f room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=4ac12ec3-503c-4749-8fad-89ae4d04a97e room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=3550740c-461b-4b76-b29e-1940adc8f596 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=2fd521c6-bbe2-4347-8527-93b9cfa2b83b limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.get.ok: count=10 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=bbdab7f3-1b1a-4b3c-a520-f11658862b0b room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send.ok: id=48943216-a6f3-45a3-80e6-91edb0e3df8f room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:23:48+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:25:31+0300", "level": "INFO", "message": "Storage initialized", "name": "tspo", "module": "memory"}
+{"timestamp": "2025-09-08T13:25:31+0300", "level": "INFO", "message": "Socket server initialized: 0.0.0.0:8888", "name": "tspo", "module": "socket_service"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=32a33280-13e3-4c1a-a4a9-de6c6e3d7d68 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=cf7396be-ede9-4074-b188-aceca901a26a room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=afc5c70b-fab8-4dcf-8667-6dbea728a42a room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=d1220bf3-a3b1-48fd-9a61-89f51cce13c4 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=c1e5d5ec-4791-466b-8d71-656217ae1bcf room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=0f862377-43d7-43f9-848c-5ecf9c89f59a room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=4d517b65-6de7-40e0-bf83-81f57c2b40fe room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=eb7bfdd2-5ae3-4e56-ab2f-275d335d0f32 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=cf188b95-c929-4e78-8bd0-8de655686dbc room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=aaee5d2f-d383-4333-9ad1-6f49fec9806f room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=9cc02ca4-d19b-44a4-ab4c-6a141d8560bb room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=40f1bdf2-b2cd-4d1f-b8e7-b18557ae90b8 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=40758088-8161-4994-8971-10226cf92eb4 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=c9bc7a29-f071-43be-aeef-3bb64518eebc room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=9f5225ed-5669-472d-ae0b-e06f94e8cde7 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=fcd07e06-081c-49ef-84be-b62d4abb5810 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=4657e1b0-010d-4ca1-92c4-444a2edc08c1 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=efeb2984-0019-4ff6-a7bf-4345b0b99c12 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=b2232271-fcf6-4e26-a119-ed89bc0cacaa room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=6199fc41-c909-46b1-98f2-5fd859b51ef0 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=None limit=2 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.get.ok: count=2 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.get: room=general since_ts=None after_id=cf7396be-ede9-4074-b188-aceca901a26a limit=10 sender=None", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.get.ok: count=10 has_more=True", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "ERROR", "message": "Error creating message: Message content cannot be empty", "name": "tspo", "module": "message_service"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=bob", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=c0719995-7b30-43de-b676-e7e1cf342672 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send.ok: id=f03f0d4f-784b-4473-a424-747c33db8296 room=general", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "INFO", "message": "API messages.send: room=general sender=alice", "name": "tspo", "module": "messages"}
+{"timestamp": "2025-09-08T13:25:51+0300", "level": "ERROR", "message": "Error creating message: Duplicate idempotency key", "name": "tspo", "module": "message_service"}
