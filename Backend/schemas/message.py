@@ -47,7 +47,6 @@ class HealthResponse(BaseModel):
     uptime_seconds: float
     room_count: int
     message_count: int
-    active_connections: int
     timestamp: datetime
 
 
@@ -56,8 +55,3 @@ class ForwardConfig(BaseModel):
     secret: str
     enabled: bool = True
 
-
-class PollResponse(BaseModel):
-    messages: List[MessageResponse]
-    timeout: bool = False
-    timestamp: datetime

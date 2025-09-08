@@ -38,36 +38,6 @@ export async function fetchMessages(
   return data.messages;
 }
 
-export async function sendMessage(
-  params: { room: string; content: string; sender: string },
-  idempotencyKey?: string
-): Promise<Message> {
-  // Clean the message content
-  const cleanedContent = params.content.trim();
-  if (!cleanedContent) {
-    throw new Error("Message content cannot be empty");
-  }
-
-  const res = await fetch(`${API_BASE_URL}/messages/`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      ...(idempotencyKey ? { "Idempotency-Key": idempotencyKey } : {}),
-    },
-    body: JSON.stringify({
-      ...params,
-      content: cleanedContent,
-    }),
-  });
-
-  if (!res.ok) {
-    const errorText = await res.text();
-    throw new Error(`Failed to send message (${res.status}): ${errorText}`);
-  }
-
-  return res.json();
-}
-
 export function openWebSocket(room: string, sender: string): WebSocket {
   const wsBase = (API_BASE_URL || "").replace(/^http/, "ws");
   return new WebSocket(
