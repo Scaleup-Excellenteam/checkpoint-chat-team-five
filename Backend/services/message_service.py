@@ -14,6 +14,7 @@ class MessageService:
         try:
             # Clean the content using the MessageCreate method
             cleaned_content = message_data.clean_content()
+            logger.debug(f"MessageService.create: room={message_data.room} sender={message_data.sender}")
             
             message = storage.add_message(
                 room=message_data.room,
@@ -38,6 +39,9 @@ class MessageService:
     
     async def get_messages(self, query: MessageQuery) -> MessageListResponse:
         try:
+            logger.debug(
+                f"MessageService.query: room={query.room} since={query.since_ts} after_id={query.after_id} limit={query.limit} sender={query.sender}"
+            )
             messages = storage.get_messages(
                 room=query.room or "",
                 since_ts=query.since_ts,

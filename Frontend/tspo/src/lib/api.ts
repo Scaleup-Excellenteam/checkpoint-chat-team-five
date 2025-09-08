@@ -20,7 +20,7 @@ const hostname =
   typeof window !== "undefined" && (window as any)?.location?.hostname
     ? (window as any).location.hostname
     : "localhost";
-const BASE_URL =
+export const API_BASE_URL =
   V.VITE_API_URL ||
   (V.VITE_SYSTEM_IP
     ? `http://${V.VITE_SYSTEM_IP}:8000`
@@ -31,7 +31,7 @@ export async function fetchMessages(
   limit = 50
 ): Promise<Message[]> {
   const res = await fetch(
-    `${BASE_URL}/messages/?room=${encodeURIComponent(room)}&limit=${limit}`
+    `${API_BASE_URL}/messages/?room=${encodeURIComponent(room)}&limit=${limit}`
   );
   if (!res.ok) throw new Error(`Failed to fetch messages (${res.status})`);
   const data: MessageListResponse = await res.json();
@@ -48,7 +48,7 @@ export async function sendMessage(
     throw new Error("Message content cannot be empty");
   }
 
-  const res = await fetch(`${BASE_URL}/messages/`, {
+  const res = await fetch(`${API_BASE_URL}/messages/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -69,7 +69,7 @@ export async function sendMessage(
 }
 
 export function openWebSocket(room: string, sender: string): WebSocket {
-  const wsBase = (BASE_URL || "").replace(/^http/, "ws");
+  const wsBase = (API_BASE_URL || "").replace(/^http/, "ws");
   return new WebSocket(
     `${wsBase.replace(/\/$/, "")}/ws/${encodeURIComponent(
       room

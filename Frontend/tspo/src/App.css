@@ -506,6 +506,21 @@
   color: #888;
 }
 
+/* Ensure login/register inputs use dark text on white */
+.auth-form .input {
+  background: #ffffff;
+  color: #111;
+  border: 2px solid #e5e7eb;
+}
+.auth-form .input::placeholder {
+  color: #9aa0a6;
+}
+.auth-form .input:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.15);
+}
+
 /* Ensure the chat message input uses light theme text/background */
 .input.message-input {
   background: #ffffff;

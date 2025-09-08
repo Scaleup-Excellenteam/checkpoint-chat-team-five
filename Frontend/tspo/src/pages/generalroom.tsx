@@ -1,20 +1,32 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Input } from "../components";
 import "../App.css";
 import { fetchMessages, openWebSocket, type Message } from "../lib/api";
 
 function GeneralRoom() {
+  const navigate = useNavigate();
   const room = "general";
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [sending, setSending] = useState(false);
-  const user = useMemo(() => {
-    // simple ephemeral user name per tab
-    return `user-${Math.random().toString(36).slice(2, 8)}`;
+  const session = useMemo(() => {
+    try {
+      const raw = localStorage.getItem("tspo_session");
+      return raw ? JSON.parse(raw) : null;
+    } catch {
+      return null;
+    }
   }, []);
+  const displayName = session?.full_name || session?.email || "user";
   const wsRef = useRef<WebSocket | null>(null);
   const seenIdsRef = useRef<Set<string>>(new Set());
+
+  useEffect(() => {
+    if (!session) {
+      navigate("/login");
+    }
+  }, [session, navigate]);
 
   // load initial history
   useEffect(() => {
@@ -37,7 +49,8 @@ function GeneralRoom() {
 
   // open WebSocket
   useEffect(() => {
-    const ws = openWebSocket(room, user);
+    if (!session) return;
+    const ws = openWebSocket(room, displayName);
     wsRef.current = ws;
     ws.onopen = () => {};
     ws.onmessage = (event) => {
@@ -69,7 +82,7 @@ function GeneralRoom() {
       } catch {}
       wsRef.current = null;
     };
-  }, [room, user]);
+  }, [room, session, displayName]);
 
   const handleSend = async () => {
     if (message.trim() === "" || sending) return;
@@ -118,15 +131,17 @@ function GeneralRoom() {
           </div>
         </div>
         <div className="sidebar-footer">
-          <Link to="/" className="back-link">
-            ← Back to Home
-          </Link>
+          <div style={{ marginTop: "0.5rem" }}>
+            <Link to="/logout" className="back-link">
+              Logout
+            </Link>
+          </div>
         </div>
       </div>
 
       <div className="chat-main">
         <div className="chat-header">
-          <h2>General Chat</h2>
+          <h2>Welcome to the General Chat, {displayName}</h2>
           <p>For hating pineapple on pizza and discussing all things pizza</p>
         </div>
 
@@ -142,7 +157,9 @@ function GeneralRoom() {
           ) : (
             messages.map((msg) => (
               <div key={msg.id} className="message">
-                <div className="message-content">{msg.content}</div>
+                <div className="message-content">
+                  <strong>{msg.sender}:</strong> {msg.content}
+                </div>
                 <div className="message-time">
                   {new Date(msg.timestamp).toLocaleTimeString([], {
                     hour: "2-digit",

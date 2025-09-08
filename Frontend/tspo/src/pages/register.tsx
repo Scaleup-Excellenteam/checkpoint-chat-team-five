@@ -1,15 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Input, Card } from "../components";
+import { API_BASE_URL } from "../lib/api";
 import "../App.css";
 
 function Register() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -18,7 +21,7 @@ function Register() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
@@ -26,8 +29,28 @@ function Register() {
       return;
     }
 
-    // TODO: Implement registration logic
-    console.log("Registration attempt:", formData);
+    setSubmitting(true);
+    try {
+      localStorage.removeItem("tspo_session");
+      const res = await fetch(`${API_BASE_URL}/users/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: formData.email,
+          full_name: formData.username,
+          password: formData.password,
+        }),
+      });
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(text || `Register failed (${res.status})`);
+      }
+      navigate("/login");
+    } catch (err) {
+      alert((err as Error).message || "Network error: failed to reach server");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -43,6 +66,7 @@ function Register() {
             label="Username"
             placeholder="Choose a username"
             required
+            className="input"
           />
           <Input
             type="email"
@@ -52,6 +76,7 @@ function Register() {
             label="Email"
             placeholder="Enter your email"
             required
+            className="input"
           />
           <Input
             type="password"
@@ -61,6 +86,7 @@ function Register() {
             label="Password"
             placeholder="Create a password"
             required
+            className="input"
           />
           <Input
             type="password"
@@ -70,12 +96,14 @@ function Register() {
             label="Confirm Password"
             placeholder="Confirm your password"
             required
+            className="input"
           />
           <Button
             type="submit"
             variant="primary"
             size="large"
             className="auth-button"
+            disabled={submitting}
           >
             Register
           </Button>

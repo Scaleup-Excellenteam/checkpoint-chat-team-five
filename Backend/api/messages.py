@@ -16,10 +16,12 @@ async def send_message(
     idempotency_key: Optional[str] = Header(None, alias="Idempotency-Key")
 ):
     try:
+        logger.info(f"API messages.send: room={message_data.room} sender={message_data.sender}")
         message = await message_service.create_message(
             message_data=message_data,
             idempotency_key=idempotency_key
         )
+        logger.info(f"API messages.send.ok: id={message.id} room={message.room}")
         return message
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
@@ -37,6 +39,9 @@ async def get_messages(
     sender: Optional[str] = Query(None)
 ):
     try:
+        logger.info(
+            f"API messages.get: room={room} since_ts={since_ts} after_id={after_id} limit={limit} sender={sender}"
+        )
         since_datetime = None
         if since_ts:
             try:
@@ -52,7 +57,9 @@ async def get_messages(
             sender=sender
         )
         
-        return await message_service.get_messages(query)
+        resp = await message_service.get_messages(query)
+        logger.info(f"API messages.get.ok: count={resp.total} has_more={resp.has_more}")
+        return resp
     except HTTPException:
         raise
     except Exception as e:

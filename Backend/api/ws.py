@@ -42,7 +42,7 @@ manager = RoomManager()
 @router.websocket("/ws/{room}/{sender}")
 async def websocket_endpoint(websocket: WebSocket, room: str, sender: str):
     await manager.connect(room, websocket)
-    logger.info(f"WS connected: {sender} in room {room}")
+    logger.info(f"WS.connect: sender={sender} room={room}")
     try:
         # notify join
         await manager.broadcast(room, {"type": "join", "room": room, "sender": sender})
@@ -62,5 +62,5 @@ async def websocket_endpoint(websocket: WebSocket, room: str, sender: str):
     except WebSocketDisconnect:
         manager.disconnect(room, websocket)
         await manager.broadcast(room, {"type": "leave", "room": room, "sender": sender})
-        logger.info(f"WS disconnected: {sender} in room {room}")
+        logger.info(f"WS.disconnect: sender={sender} room={room}")
 

@@ -7,6 +7,8 @@ from threading import Lock
 from dataclasses import dataclass
 from core.logging import logger
 from core.config import settings
+from pathlib import Path
+import json
 
 
 @dataclass
@@ -41,6 +43,12 @@ class InMemoryStorage:
         self._idempotency_keys: set = set()
         self._start_time = time.time()
         self._lock = Lock()
+        # simple JSON-backed user store
+        repo_root = Path(__file__).resolve().parents[2]
+        self._data_dir = repo_root / "Data"
+        self._data_dir.mkdir(parents=True, exist_ok=True)
+        self._users_path = self._data_dir / "users.json"
+        self._users: Dict[str, Dict] = self._load_users()
         logger.info("Storage initialized")
     
     @property
@@ -105,6 +113,41 @@ class InMemoryStorage:
                 break
         
         return filtered_messages
+
+    # ---- Users (JSON-backed) ----
+    def _load_users(self) -> Dict[str, Dict]:
+        try:
+            if self._users_path.exists():
+                return json.loads(self._users_path.read_text(encoding="utf-8")) or {}
+        except Exception as e:
+            logger.error(f"Failed to load users.json: {e}")
+        return {}
+
+    def _persist_users(self) -> None:
+        try:
+            self._users_path.write_text(json.dumps(self._users, ensure_ascii=False, indent=2), encoding="utf-8")
+        except Exception as e:
+            logger.error(f"Failed to persist users.json: {e}")
+
+    def create_user(self, email: str, full_name: str, password: str) -> Dict:
+        if email in self._users:
+            raise ValueError("User already exists")
+        user = {"email": email, "full_name": full_name, "password": password}
+        self._users[email] = user
+        self._persist_users()
+        logger.info(f"Storage.user.created: email={email}")
+        return user
+
+    def authenticate_user(self, email: str, password: str) -> Optional[Dict]:
+        user = self._users.get(email)
+        if user and user.get("password") == password:
+            logger.debug(f"Storage.user.auth.ok: email={email}")
+            return user
+        logger.debug(f"Storage.user.auth.fail: email={email}")
+        return None
+
+    def get_user(self, email: str) -> Optional[Dict]:
+        return self._users.get(email)
     
     def set_forward_config(self, url: str, secret: str, enabled: bool = True) -> ForwardConfig:
         self._forward_config = ForwardConfig(url=url, secret=secret, enabled=enabled)
