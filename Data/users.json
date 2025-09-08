@@ -8,5 +8,10 @@
     "email": "brenernoa@gmail.com",
     "full_name": "Noa",
     "password": "12345"
+  },
+  "haim@gmail.com": {
+    "email": "haim@gmail.com",
+    "full_name": "HaimHubara",
+    "password": "123456"
   }
 }

@@ -3,6 +3,7 @@ from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from core.logging import logger
 from storage.memory import storage
 from services.dlp.text_validator import decide_for_text, enforce_or_raise, DLPViolation
+from services.dlp.url_validator import validate_urls_in_text, InvalidUrl
 
 
 router = APIRouter()
@@ -49,18 +50,21 @@ async def websocket_endpoint(websocket: WebSocket, room: str, sender: str):
         await manager.broadcast(room, {"type": "join", "room": room, "sender": sender})
         while True:
             data = await websocket.receive_text()
-            # DLP validation (fast local + Gemini if suspicious)
+            # DLP validation
             try:
+                # (1) URL checks: Google Safe Browsing + Webshrinker categories
+                await validate_urls_in_text(data)
                 decision = await decide_for_text(data)
                 enforce_or_raise(decision)
-            except DLPViolation as e:
+            except (DLPViolation, InvalidUrl) as e:
                 # Notify sender only; do not broadcast/save
                 try:
+                    logger.warning(f"DLP blocked message: {e}")
                     await websocket.send_json({
                         "type": "error",
                         "room": room,
                         "sender": "server",
-                        "detail": str(e),
+                        "detail": "Company policy violated, -500$",
                     })
                 except Exception:
                     pass

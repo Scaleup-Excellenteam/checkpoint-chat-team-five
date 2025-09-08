@@ -1,4 +1,5 @@
 from typing import Literal
+from core.config import settings
 try:
     # Prefer Ollama (local, fast)
     from .ollama_client import classify_is_baking_recipe, OllamaClientError as ProviderError
@@ -34,6 +35,13 @@ _BAKING_HINTS = tuple(x.lower() for x in (
 def looks_suspicious_baking(text: str) -> bool:
     t = (text or "").lower()
     return any(hint in t for hint in _BAKING_HINTS)
+
+
+def contains_blocked_keywords(text: str) -> bool:
+    if not settings.BLOCKED_TEXT_KEYWORDS:
+        return False
+    t = (text or "").lower()
+    return any(k in t for k in settings.BLOCKED_TEXT_KEYWORDS)
 async def decide_for_text(
     text: str,
     *,
@@ -45,6 +53,8 @@ async def decide_for_text(
     - 'allow' if no suspicion or Gemini says it's not a baking recipe
     - 'block' if Gemini says it IS a recipe, or provider error/timeout (when fail_closed=True)
     """
+    if contains_blocked_keywords(text):
+        return "block"
     if not looks_suspicious_baking(text):
         return "allow"
     try:

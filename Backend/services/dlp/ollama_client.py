@@ -21,7 +21,7 @@ _PROMPT = (
 )
 
 
-async def classify_is_baking_recipe(text: str, *, timeout_sec: float = 1.5) -> bool:
+async def classify_is_baking_recipe(text: str, *, timeout_sec: float = 2.0) -> bool:
     """
     Returns True if the text is a baking recipe/instructions (per Ollama); else False.
     Raises OllamaClientError on timeout/network/format errors.
