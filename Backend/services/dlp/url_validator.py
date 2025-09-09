@@ -2,8 +2,14 @@ import re
 import asyncio
 from urllib.parse import urlparse
 from base64 import urlsafe_b64encode
-from typing import List, Dict
+from typing import List, Dict, Set
 import aiohttp
+from pathlib import Path
+import json
+from threading import RLock
+import hmac
+import hashlib
+import base64
 from core.config import settings
 
 
@@ -49,6 +55,62 @@ def is_structurally_valid(url: str) -> bool:
         return p.scheme in ("http", "https") and bool(p.netloc)
     except Exception:
         return False
+
+
+# ---- Blocked URL cache ----
+_blocked_url_cache: Set[str] = set()
+_cache_lock: RLock = RLock()
+_repo_root = Path(__file__).resolve().parents[3]
+_data_dir = _repo_root / "Data"
+_data_dir.mkdir(parents=True, exist_ok=True)
+_blocked_urls_path = _data_dir / "blocked_urls.json"
+
+
+def _load_blocked_urls() -> Set[str]:
+    try:
+        if _blocked_urls_path.exists():
+            data = json.loads(_blocked_urls_path.read_text(encoding="utf-8"))
+            if isinstance(data, list):
+                return set(str(x).strip().lower() for x in data if x)
+    except Exception:
+        pass
+    return set()
+
+
+def _persist_blocked_urls() -> None:
+    try:
+        with _cache_lock:
+            _blocked_urls_path.write_text(
+                json.dumps(sorted(_blocked_url_cache), ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+    except Exception:
+        # Non-fatal; caching is best-effort
+        pass
+
+
+# Initialize cache from disk
+_blocked_url_cache = _load_blocked_urls()
+
+
+def _normalize_for_cache(url: str) -> str:
+    return _normalize_url(url)
+
+
+def mark_url_blocked(url: str) -> None:
+    """Remember a URL as blocked for fast future checks."""
+    norm = _normalize_for_cache(url).strip().lower()
+    if not norm:
+        return
+    with _cache_lock:
+        if norm not in _blocked_url_cache:
+            _blocked_url_cache.add(norm)
+            _persist_blocked_urls()
+
+
+def is_url_blocked(url: str) -> bool:
+    """Check if URL was previously blocked."""
+    return _normalize_for_cache(url) in _blocked_url_cache
 
 
 async def check_virustotal(url: str) -> None:
@@ -154,13 +216,22 @@ async def validate_urls_in_text(text: str) -> None:
     urls = [u for u in extract_urls(text) if is_structurally_valid(u)]
     if not urls:
         return
+    # Cached block fast-path
+    for u in urls:
+        if is_url_blocked(u):
+            raise InvalidUrl("URL previously blocked")
     # Quick hostname keyword block (fast path)
     for u in urls:
         host = urlparse(u).netloc.lower()
         if any(k in host for k in settings.BLOCKED_DOMAIN_KEYWORDS):
+            mark_url_blocked(u)
             raise InvalidUrl("Blocked by hostname keyword policy")
     # VirusTotal reputation check per URL
     for u in urls:
-        await check_virustotal(u)
+        try:
+            await check_virustotal(u)
+        except InvalidUrl:
+            mark_url_blocked(u)
+            raise
         # Optional category policy using VT's categories (not implemented here)
         # If you want to enforce categories, extend to fetch URL object and compare.

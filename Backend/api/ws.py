@@ -4,6 +4,7 @@ from core.logging import logger
 from storage.memory import storage
 from services.dlp.text_validator import decide_for_text, enforce_or_raise, DLPViolation
 from services.dlp.url_validator import validate_urls_in_text, InvalidUrl
+from services.dlp.ip_validator import is_ip_blocked, validate_ips_in_text, InvalidIP
 
 
 router = APIRouter()
@@ -43,6 +44,15 @@ manager = RoomManager()
 
 @router.websocket("/ws/{room}/{sender}")
 async def websocket_endpoint(websocket: WebSocket, room: str, sender: str):
+    # Simple IP gate
+    try:
+        client_ip = websocket.client.host if websocket.client else ""
+    except Exception:
+        client_ip = ""
+    if is_ip_blocked(client_ip):
+        await websocket.close(code=4403)
+        return
+
     await manager.connect(room, websocket)
     logger.info(f"WS.connect: sender={sender} room={room}")
     try:
@@ -56,7 +66,7 @@ async def websocket_endpoint(websocket: WebSocket, room: str, sender: str):
                 await validate_urls_in_text(data)
                 decision = await decide_for_text(data)
                 enforce_or_raise(decision)
-            except (DLPViolation, InvalidUrl) as e:
+            except (DLPViolation, InvalidUrl, InvalidIP) as e:
                 # Notify sender only; do not broadcast/save
                 try:
                     logger.warning(f"DLP blocked message: {e}")
@@ -71,6 +81,21 @@ async def websocket_endpoint(websocket: WebSocket, room: str, sender: str):
                 continue
 
             # store message and broadcast
+            # IP content validation
+            try:
+                validate_ips_in_text(data)
+            except InvalidIP as e:
+                try:
+                    await websocket.send_json({
+                        "type": "error",
+                        "room": room,
+                        "sender": "server",
+                        "detail": "Company policy violated, -500$",
+                    })
+                except Exception:
+                    pass
+                continue
+
             msg = storage.add_message(room=room, content=data, sender=sender)
             payload = {
                 "type": "chat",

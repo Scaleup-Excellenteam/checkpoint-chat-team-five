@@ -1,7 +1,7 @@
 import signal
 import sys
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
@@ -12,6 +12,7 @@ from api import ws as ws_routes
 from api import users
 from services.message_service import message_service
 from services.dlp.text_validator import DLPViolation
+from services.dlp.ip_validator import enforce_ip_allowed, InvalidIP
 
 
 @asynccontextmanager
@@ -30,6 +31,15 @@ app = FastAPI(
     version=settings.API_VERSION,
     lifespan=lifespan
 )
+
+@app.middleware("http")
+async def ip_block_middleware(request: Request, call_next):
+    try:
+        client_ip = request.client.host if request.client else ""
+        enforce_ip_allowed(client_ip)
+    except InvalidIP:
+        return JSONResponse(status_code=403, content={"detail": "Blocked client IP"})
+    return await call_next(request)
 
 app.add_middleware(
     CORSMiddleware,
